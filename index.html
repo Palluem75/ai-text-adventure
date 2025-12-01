@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Start Screen -->
+        <section id="start-screen" class="screen active">
+            <h1>AI Text Adventure</h1>
+            <div class="form-group">
+                <label for="player-name">Name des Abenteurers</label>
+                <input type="text" id="player-name" placeholder="Dein Name" autocomplete="off">
+            </div>
+            
+            <div class="form-group">
+                <label for="game-genre">Genre</label>
+                <select id="game-genre">
+                    <option value="fantasy">Dark Fantasy</option>
+                    <option value="scifi">Sci-Fi / Cyberpunk</option>
+                    <option value="mystery">Mystery / Horror</option>
+                    <option value="postapocalyptic">Post-Apokalyptisch</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="api-key">Google Gemini API Key</label>
+                <input type="password" id="api-key" placeholder="API Key hier einfügen">
+                <small>Der Key wird nicht gespeichert.</small>
+            </div>
+
+            <div class="form-group">
+                <label>Start-Attribute (Verteile 10 Punkte)</label>
+                <div class="stats-container">
+                    <div class="stat-control">
+                        <span>Stärke:</span>
+                        <input type="number" id="stat-str" value="3" min="1" max="10">
+                    </div>
+                    <div class="stat-control">
+                        <span>Intelligenz:</span>
+                        <input type="number" id="stat-int" value="3" min="1" max="10">
+                    </div>
+                    <div class="stat-control">
+                        <span>Geschick:</span>
+                        <input type="number" id="stat-dex" value="3" min="1" max="10">
+                    </div>
+                </div>
+            </div>
+
+            <button id="start-game-btn" class="primary-btn">Abenteuer starten</button>
+        </section>
+
+        <!-- Game Screen -->
+        <section id="game-screen" class="screen hidden">
+            <header class="game-header">
+                <div id="player-display">Spieler: <span id="display-name"></span></div>
+                <div id="stats-display">STR: <span id="display-str"></span> | INT: <span id="display-int"></span> | DEX: <span id="display-dex"></span></div>
+            </header>
+            
+            <div id="chat-container" class="chat-container">
+                <!-- Chat messages will appear here -->
+                <div class="message system-message">Willkommen im Abenteuer. Warte auf Initialisierung...</div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Was möchtest du tun?" autocomplete="off">
+                <button id="send-btn">Senden</button>
+            </div>
+        </section>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
