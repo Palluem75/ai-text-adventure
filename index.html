@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Text Adventure</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="app-container">
         <!-- Start Screen -->
@@ -15,7 +17,7 @@
                 <label for="player-name">Name des Abenteurers</label>
                 <input type="text" id="player-name" placeholder="Dein Name" autocomplete="off">
             </div>
-            
+
             <div class="form-group">
                 <label for="game-genre">Genre</label>
                 <select id="game-genre">
@@ -57,9 +59,10 @@
         <section id="game-screen" class="screen hidden">
             <header class="game-header">
                 <div id="player-display">Spieler: <span id="display-name"></span></div>
-                <div id="stats-display">STR: <span id="display-str"></span> | INT: <span id="display-int"></span> | DEX: <span id="display-dex"></span></div>
+                <div id="stats-display">STR: <span id="display-str"></span> | INT: <span id="display-int"></span> | DEX:
+                    <span id="display-dex"></span></div>
             </header>
-            
+
             <div id="chat-container" class="chat-container">
                 <!-- Chat messages will appear here -->
                 <div class="message system-message">Willkommen im Abenteuer. Warte auf Initialisierung...</div>
@@ -72,6 +75,7 @@
         </section>
     </div>
 
-    <script type="module" src="main.js"></script>
+    <script type="module" src="main.js?v=2"></script>
 </body>
+
 </html>
