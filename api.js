@@ -5,7 +5,7 @@
  * @returns {Promise<string>} - The response text from the AI.
  */
 export async function sendToGemini(apiKey, messages) {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-001:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
     // Transform messages to Gemini format
     // Gemini expects: { role: "user" | "model", parts: [{ text: "..." }] }
