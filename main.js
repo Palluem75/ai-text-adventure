@@ -69,6 +69,10 @@ async function startGame() {
     const systemPrompt = createSystemPrompt();
     addToHistory('system', systemPrompt);
 
+    // Add a hidden user message to trigger the start
+    // This fixes the "contents is not specified" error because Gemini needs at least one user message.
+    addToHistory('user', 'Starte das Abenteuer. Beschreibe die Ausgangssituation.');
+
     // Send first request to AI to start the game
     addMessageToUI('System', 'Verbinde mit KI...', 'system-message');
 
